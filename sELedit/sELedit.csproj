@@ -1,0 +1,915 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{243153A5-A6AC-4731-B8A9-8415179CA584}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>sELedit</RootNamespace>
+    <AssemblyName>sELedit NanoTech</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <Optimize>false</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="colorprogressbar">
+      <HintPath>.\colorprogressbar.dll</HintPath>
+    </Reference>
+    <Reference Include="DevILNet">
+      <HintPath>..\..\GShopEditorByLuka-master\GShopEditorByLuka\DevILNet.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit, Version=2.20.2.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.2.20.2\lib\netstandard1.1\HelixToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="HelixToolkit.Wpf, Version=2.20.2.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
+      <HintPath>..\packages\HelixToolkit.Wpf.2.20.2\lib\net45\HelixToolkit.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.11.37.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.11.37\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="LBLIBRARY">
+      <HintPath>..\..\GShopEditorByLuka-master\GShopEditorByLuka\LBLIBRARY.dll</HintPath>
+    </Reference>
+    <Reference Include="package">
+      <HintPath>..\..\sTASKedit-master\package\bin\Debug\package.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="tasks">
+      <HintPath>..\..\sTASKedit-master\tasks\bin\Debug\tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="zlib.net">
+      <HintPath>..\..\settingsPW\settingsPW\bin\zlib.net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssetManager.cs" />
+    <Compile Include="configs\AdvancedCursorsFromEmbededResources.cs" />
+    <Compile Include="configs\AlphaTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="configs\CheckComboBox.cs" />
+    <Compile Include="Previews\Structures\EcmFile.cs" />
+    <Compile Include="Previews\Structures\EcmFileStructure.cs" />
+    <Compile Include="Previews\Structures\SmdFile.cs" />
+    <Compile Include="Previews\Models\Face.cs" />
+    <Compile Include="MainWindow .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow .Designer.cs">
+      <DependentUpon>MainWindow .cs</DependentUpon>
+    </Compile>
+    <Compile Include="Previews\Models\MeshObject.cs" />
+    <Compile Include="Previews\Models\SkiMaterial.cs" />
+    <Compile Include="Previews\Models\SkiReader.cs" />
+    <Compile Include="Previews\SkiViewer.xaml.cs">
+      <DependentUpon>SkiViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Previews\SkiViewerModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Previews\SkiViewerModel.Designer.cs">
+      <DependentUpon>SkiViewerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\ClassMaskWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\ClassMaskWindow.Designer.cs">
+      <DependentUpon>ClassMaskWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\CacheSave.cs" />
+    <Compile Include="COMMON\DebugWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="COMMON\DebugWindow.Designer.cs">
+      <DependentUpon>DebugWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="COMMON\eList.cs" />
+    <Compile Include="COMMON\eListCollection.cs" />
+    <Compile Include="COMMON\eListConversation.cs" />
+    <Compile Include="COMMON\Extensions.cs" />
+    <Compile Include="COMMON\GetProps\ARMORRUNE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\ARMOR_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\ASTROLABE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\AUTOHP_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\AUTOMP_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\CONGREGATE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\DAMAGERUNE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\DECORATION_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\ELEMENT_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\EQUIPMENT_ADDON.cs" />
+    <Compile Include="COMMON\GetProps\FACEPILL_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\FASHION_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\FIREWORKS2_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\FIREWORKS_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\FLYSWORD_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\FORCE_TOKEN_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\GOBLIN_EQUIP_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\GOBLIN_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\GOBLIN_EXPPILL_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\HOME_FORMULAS_ITEM_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\HOME_ITEM_ENTITY.cs" />
+    <Compile Include="COMMON\GetProps\INC_SKILL_ABILITY_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\MEDICINE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\MINE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\MONSTER_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\NPC_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\PET_EGG_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\PET_FOOD_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\POKER_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\PROJECTILE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\REFINE_TICKET_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\SELL_CERTIFICATE_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\SHARPENER_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\SKILLMATTER_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\TARGET_ITEM_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\TITLE_CONFIG.cs" />
+    <Compile Include="COMMON\GetProps\UNIVERSAL_TOKEN_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\WEAPON_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\WEDDING_BOOKCARD_ESSENCE.cs" />
+    <Compile Include="COMMON\GetProps\WINGMANWING_ESSENCE.cs" />
+    <Compile Include="COMMON\ItemDupe.cs" />
+    <Compile Include="COMMON\option.cs" />
+    <Compile Include="COMMON\talk_proc.cs" />
+    <Compile Include="COMMON\window.cs" />
+    <Compile Include="configs\ApiHelper.cs" />
+    <Compile Include="configs\FloatTrackBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="configs\frmBackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="configs\LoadDDS.cs" />
+    <Compile Include="configs\TextAndImageColumn.cs" />
+    <Compile Include="SUB_FORM\Configs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\Configs.Designer.cs">
+      <DependentUpon>Configs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="configs\DataGridViewProgressColumncs .cs" />
+    <Compile Include="configs\ImgsFiles.cs" />
+    <Compile Include="configs\LISTAS.cs" />
+    <Compile Include="configs\PCKs.cs" />
+    <Compile Include="configs\XML.cs" />
+    <Compile Include="OUTROS\ConfigWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\ConfigWindow.Designer.cs">
+      <DependentUpon>ConfigWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DDSReader\DDS.cs" />
+    <Compile Include="DDSReader\DDSImage.cs" />
+    <Compile Include="DDSReader\Decompressor.cs" />
+    <Compile Include="DDSReader\Utils.cs" />
+    <Compile Include="OUTROS\FieldCompare.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\FieldCompare.Designer.cs">
+      <DependentUpon>FieldCompare.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\FieldReplaceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\FieldReplaceWindow.Designer.cs">
+      <DependentUpon>FieldReplaceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="gShop\shopPw.cs" />
+    <Compile Include="OUTROS\loads.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\loads.Designer.cs">
+      <DependentUpon>loads.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\LoasdsProgreces.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\LoasdsProgreces.Designer.cs">
+      <DependentUpon>LoasdsProgreces.cs</DependentUpon>
+    </Compile>
+    <Compile Include="teste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teste.Designer.cs">
+      <DependentUpon>teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOOLTIPS\CLASSES\InfoTool.cs" />
+    <Compile Include="TOOLTIPS\IToolType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOOLTIPS\IToolType.designer.cs">
+      <DependentUpon>IToolType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\JoinWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\JoinWindow.Designer.cs">
+      <DependentUpon>JoinWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\LoseQuestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\LoseQuestWindow.Designer.cs">
+      <DependentUpon>LoseQuestWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow_OLD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow_OLD.Designer.cs">
+      <DependentUpon>MainWindow_OLD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newPck\ArchiveEngine.cs" />
+    <Compile Include="newPck\PW_W.cs" />
+    <Compile Include="newPck\PCKFileEntry.cs" />
+    <Compile Include="newPck\PCKKey.cs" />
+    <Compile Include="newPck\PCKStream.cs" />
+    <Compile Include="newPck\PCKZlib.cs" />
+    <Compile Include="newPck\read\ReadPCK.cs" />
+    <Compile Include="SUB_FORM\addons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\addons.Designer.cs">
+      <DependentUpon>addons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\CONTROLES\blocosS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\CONTROLES\blocosS.Designer.cs">
+      <DependentUpon>blocosS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\CLASSES\ElementProbability.cs" />
+    <Compile Include="SUB_FORM\SELL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\SELL.Designer.cs">
+      <DependentUpon>SELL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\item_ext_desc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\item_ext_desc.Designer.cs">
+      <DependentUpon>item_ext_desc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NOVO\mConvert.cs" />
+    <Compile Include="SUB_FORM\ProbabilityEditorWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\ProbabilityEditorWindow.designer.cs">
+      <DependentUpon>ProbabilityEditorWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\CONTROLES\recipeItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\CONTROLES\recipeItem.Designer.cs">
+      <DependentUpon>recipeItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\SurfacesChanger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\SurfacesChanger.designer.cs">
+      <DependentUpon>SurfacesChanger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\_major_sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\_major_sub.Designer.cs">
+      <DependentUpon>_major_sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ups\exyt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ups\exyt.Designer.cs">
+      <DependentUpon>exyt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\ProcTypeGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\ProcTypeGenerator.Designer.cs">
+      <DependentUpon>ProcTypeGenerator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\RECIPES.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\RECIPES.Designer.cs">
+      <DependentUpon>RECIPES.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\CLASSES\ITEM.cs" />
+    <Compile Include="SUB_FORM\ForjaShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\ForjaShop.Designer.cs">
+      <DependentUpon>ForjaShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\Select_id.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\Select_id.designer.cs">
+      <DependentUpon>Select_id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\set_ADDONS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\set_ADDONS.Designer.cs">
+      <DependentUpon>set_ADDONS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOOLTIPS\ToolTip_addons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOOLTIPS\ToolTip_addons.designer.cs">
+      <DependentUpon>ToolTip_addons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OOP_NET\oops\Constants.cs" />
+    <Compile Include="OOP_NET\oops\FileLog.cs" />
+    <Compile Include="OOP_NET\oops\IClass\SimpleComand.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonBinaryType.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonBinaryWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonObjectId.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonToken.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonType.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Bson\BsonWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\ConstructorHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\BinaryConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\BsonObjectIdConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\CustomCreationConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\DataSetConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\DataTableConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\DateTimeConverterBase.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\DiscriminatedUnionConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\EntityKeyMemberConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\ExpandoObjectConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\IsoDateTimeConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\JavaScriptDateTimeConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\JsonValueConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\KeyValuePairConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\RegexConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\StringEnumConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\VersionConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Converters\XmlNodeConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\DateFormatHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\DateParseHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\DateTimeZoneHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\DefaultValueHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\FloatFormatHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\FloatParseHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\FormatterAssemblyStyle.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Formatting.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\IArrayPool.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\IJsonLineInfo.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonArrayAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonConstructorAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonContainerAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonConvert.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonConverterAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonConverterCollection.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonDictionaryAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonException.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonExtensionDataAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonIgnoreAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonObjectAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonPosition.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonPropertyAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonReaderException.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonRequiredAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonSerializationException.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonSerializer.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonSerializerSettings.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonTextReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonTextWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonToken.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonValidatingReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\JsonWriterException.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\CommentHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\Extensions.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\IJEnumerable.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JArray.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JConstructor.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JContainer.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JEnumerable.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JObject.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JProperty.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JPropertyDescriptor.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JPropertyKeyedCollection.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JRaw.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonLoadSettings.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonMergeSettings.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\ArrayIndexFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\ArrayMultipleIndexFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\ArraySliceFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\FieldFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\FieldMultipleFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\JPath.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\PathFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\QueryExpression.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\QueryFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JsonPath\ScanFilter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JToken.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JTokenEqualityComparer.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JTokenReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JTokenType.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JTokenWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\JValue.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\MergeArrayHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Linq\MergeNullValueHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\MemberSerialization.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\MetadataPropertyHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\MissingMemberHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\NullValueHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\ObjectCreationHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\PreserveReferencesHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\ReferenceLoopHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Required.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\Extensions.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchema.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaBuilder.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaConstants.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaException.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaGenerator.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaModel.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaModelBuilder.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaNode.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaNodeCollection.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaResolver.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaType.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\JsonSchemaWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\UndefinedSchemaIdHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\ValidationEventArgs.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Schema\ValidationEventHandler.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\SerializationBinder.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\CachedAttributeGetter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\CamelCaseNamingStrategy.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\CamelCasePropertyNamesContractResolver.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\DefaultContractResolver.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\DefaultNamingStrategy.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\DefaultReferenceResolver.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\DefaultSerializationBinder.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\DiagnosticsTraceWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\DynamicValueProvider.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ErrorContext.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ErrorEventArgs.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ExpressionValueProvider.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\IAttributeProvider.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\IContractResolver.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\IReferenceResolver.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ITraceWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\IValueProvider.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonArrayContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonContainerContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonDictionaryContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonDynamicContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonFormatterConverter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonISerializableContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonLinqContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonObjectContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonPrimitiveContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonProperty.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonPropertyCollection.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonSerializerInternalBase.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonSerializerInternalReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonSerializerInternalWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonSerializerProxy.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonStringContract.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\JsonTypeReflector.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\MemoryTraceWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\NamingStrategy.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ObjectConstructor.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\OnErrorAttribute.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ReflectionAttributeProvider.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\ReflectionValueProvider.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\SnakeCaseNamingStrategy.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\TraceJsonReader.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Serialization\TraceJsonWriter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\StringEscapeHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\TraceLevel.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\TypeNameHandling.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\Base64Encoder.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\BidirectionalDictionary.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\CollectionUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\CollectionWrapper.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ConvertUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DateTimeParser.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DateTimeUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DictionaryWrapper.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DynamicProxy.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DynamicProxyMetaObject.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DynamicReflectionDelegateFactory.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\DynamicUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\EnumUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\EnumValue.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ExpressionReflectionDelegateFactory.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\FSharpUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ILGeneratorExtensions.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ImmutableCollectionsUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\JavaScriptUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\JsonTokenUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\LateBoundReflectionDelegateFactory.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\LinqBridge.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\MathUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\MethodCall.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\MiscellaneousUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\PlainTexter.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\PropertyNameTable.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ReflectionDelegateFactory.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ReflectionObject.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ReflectionUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\StringBuffer.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\StringReference.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\StringUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ThreadSafeStore.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\TypeExtensions.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\Utilities\ValidationUtils.cs" />
+    <Compile Include="OOP_NET\oops\Newtonsoft.Json\WriteState.cs" />
+    <Compile Include="OOP_NET\oops\util\HashMap.cs" />
+    <Compile Include="OOP_NET\oops\util\Iu.cs" />
+    <Compile Include="OOP_NET\oops\util\NativeMethods.cs" />
+    <Compile Include="OOP_NET\oops\util\WindowHandleInfo.cs" />
+    <Compile Include="OOP_NET\oops\Win32.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\ReferencesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\ReferencesWindow.Designer.cs">
+      <DependentUpon>ReferencesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\ReplaceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\ReplaceWindow.Designer.cs">
+      <DependentUpon>ReplaceWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OUTROS\CLASSES\RuleConfig.cs" />
+    <Compile Include="OUTROS\RulesWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OUTROS\RulesWindow.Designer.cs">
+      <DependentUpon>RulesWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TOOLTIPS\ToolTip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TOOLTIPS\ToolTip.designer.cs">
+      <DependentUpon>ToolTip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SUB_FORM\_ListNamesColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SUB_FORM\_ListNamesColor.Designer.cs">
+      <DependentUpon>_ListNamesColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ups\BuscaAddonsSuite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ups\BuscaAddonsSuite.Designer.cs">
+      <DependentUpon>BuscaAddonsSuite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ups\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ups\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Previews\Models\Vertex.cs" />
+    <EmbeddedResource Include="MainWindow .resx">
+      <DependentUpon>MainWindow .cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Previews\SkiViewerModel.resx">
+      <DependentUpon>SkiViewerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\ClassMaskWindow.resx">
+      <DependentUpon>ClassMaskWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="COMMON\DebugWindow.resx">
+      <DependentUpon>DebugWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\Configs.resx">
+      <DependentUpon>Configs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\ConfigWindow.resx">
+      <DependentUpon>ConfigWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\FieldCompare.resx">
+      <DependentUpon>FieldCompare.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\FieldReplaceWindow.resx">
+      <DependentUpon>FieldReplaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\loads.resx">
+      <DependentUpon>loads.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\LoasdsProgreces.resx">
+      <DependentUpon>LoasdsProgreces.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teste.resx">
+      <DependentUpon>teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOOLTIPS\IToolType.resx">
+      <DependentUpon>IToolType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\JoinWindow.resx">
+      <DependentUpon>JoinWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\LoseQuestWindow.resx">
+      <DependentUpon>LoseQuestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow_OLD.resx">
+      <DependentUpon>MainWindow_OLD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\addons.resx">
+      <DependentUpon>addons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\CONTROLES\blocosS.resx">
+      <DependentUpon>blocosS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\SELL.resx">
+      <DependentUpon>SELL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\item_ext_desc.resx">
+      <DependentUpon>item_ext_desc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\ProbabilityEditorWindow.resx">
+      <DependentUpon>ProbabilityEditorWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\CONTROLES\recipeItem.resx">
+      <DependentUpon>recipeItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\SurfacesChanger.resx">
+      <DependentUpon>SurfacesChanger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\_major_sub.resx">
+      <DependentUpon>_major_sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ups\exyt.resx">
+      <DependentUpon>exyt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\ForjaShop.resx">
+      <DependentUpon>ForjaShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\ProcTypeGenerator.resx">
+      <DependentUpon>ProcTypeGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\RECIPES.resx">
+      <DependentUpon>RECIPES.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\Select_id.resx">
+      <DependentUpon>Select_id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\set_ADDONS.resx">
+      <DependentUpon>set_ADDONS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOOLTIPS\ToolTip_addons.resx">
+      <DependentUpon>ToolTip_addons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\ReferencesWindow.resx">
+      <DependentUpon>ReferencesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\ReplaceWindow.resx">
+      <DependentUpon>ReplaceWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OUTROS\RulesWindow.resx">
+      <DependentUpon>RulesWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TOOLTIPS\ToolTip.resx">
+      <DependentUpon>ToolTip.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SUB_FORM\_ListNamesColor.resx">
+      <DependentUpon>_ListNamesColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ups\BuscaAddonsSuite.resx">
+      <DependentUpon>BuscaAddonsSuite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ups\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="OOP_NET\oops\Newtonsoft.Json\Dynamic.snk" />
+    <None Include="OOP_NET\oops\Newtonsoft.Json\Newtonsoft.Json.ruleset" />
+    <None Include="OOP_NET\oops\Newtonsoft.Json\project.json" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Resources\Game.ani" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="0000.ico" />
+    <Content Include="app.ico" />
+    <Content Include="DDSReader\DDSReader.csproj" />
+    <Content Include="DDSReader\DDSReader.mdp" />
+    <Content Include="DDSReader\DDSReader.xml" />
+    <Content Include="favicon.ico" />
+    <Content Include="LBLIBRARY.dll" />
+    <Content Include="OOP_NET\oops\Newtonsoft.Json\Newtonsoft.Json.csproj" />
+    <None Include="Resources\Hand.ani" />
+    <None Include="Resources\icon_0_0.png" />
+    <None Include="Resources\icon_3_1_alpha.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\models_error_error.ski" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\clone.png" />
+    <None Include="Resources\duplicar.png" />
+    <None Include="Resources\delet.png" />
+    <None Include="Resources\giphy.gif" />
+    <None Include="Resources\bac.png" />
+    <None Include="Resources\g1.png" />
+    <None Include="Resources\g11.png" />
+    <None Include="Resources\bloco.png" />
+    <None Include="Resources\bloco2.png" />
+    <None Include="Resources\bloco_a.png" />
+    <None Include="Resources\bloco_select.png" />
+    <None Include="Resources\base.png" />
+    <Content Include="Resources\bloco_select.tga" />
+    <None Include="Resources\txt.png" />
+    <None Include="Resources\tab_on.png" />
+    <None Include="Resources\tab_off.png" />
+    <None Include="Resources\边框.png" />
+    <Content Include="Updates.txt" />
+    <None Include="Resources\location.png" />
+    <None Include="Resources\recipe.png" />
+    <None Include="Resources\InsertColor1.ico" />
+    <None Include="Resources\icon_5_0.png" />
+    <None Include="Resources\diskette1.png" />
+    <None Include="Resources\save_as.png" />
+    <None Include="Resources\icon_3_0_alpha.png" />
+    <None Include="Resources\diskette.png" />
+    <None Include="Resources\background_1.png" />
+    <None Include="Resources\ToolType.png" />
+    <None Include="Resources\unknown.png" />
+    <None Include="Resources\user_walk.ico" />
+    <None Include="Resources\Under_category.ico" />
+    <None Include="Resources\ToSelectedItem.ico" />
+    <None Include="Resources\SmallQuestionMark.ico" />
+    <None Include="Resources\silver.ico" />
+    <None Include="Resources\show.ico" />
+    <None Include="Resources\shopping-basket-refresh.ico" />
+    <None Include="Resources\Set_time.ico" />
+    <None Include="Resources\Seerach_options.ico" />
+    <None Include="Resources\search.ico" />
+    <None Include="Resources\SaveSev.ico" />
+    <None Include="Resources\Save.ico" />
+    <None Include="Resources\Russian.ico" />
+    <None Include="Resources\Right.ico" />
+    <None Include="Resources\RenameWith.ico" />
+    <None Include="Resources\rename1.ico" />
+    <None Include="Resources\rename.ico" />
+    <None Include="Resources\remove.ico" />
+    <None Include="Resources\PreviousList.ico" />
+    <None Include="Resources\Options.ico" />
+    <None Include="Resources\Open_file.ico" />
+    <None Include="Resources\move_up.ico" />
+    <None Include="Resources\move_down.ico" />
+    <None Include="Resources\move.ico" />
+    <None Include="Resources\monotone_pen_write.ico" />
+    <None Include="Resources\Left.ico" />
+    <None Include="Resources\Interaction.ico" />
+    <None Include="Resources\InsertColor.ico" />
+    <None Include="Resources\info.ico" />
+    <None Include="Resources\import.ico" />
+    <None Include="Resources\gnome-settings-default-applications.ico" />
+    <None Include="Resources\Fix.ico" />
+    <None Include="Resources\ExtraGshopdata.ico" />
+    <None Include="Resources\Exit.ico" />
+    <None Include="Resources\English.ico" />
+    <None Include="Resources\document-export.ico" />
+    <None Include="Resources\Create.ico" />
+    <None Include="Resources\Clone.ico" />
+    <None Include="Resources\CategoriesWindow.ico" />
+    <None Include="Resources\Categories.ico" />
+    <None Include="Resources\button_cancel.ico" />
+    <None Include="Resources\brush.ico" />
+    <None Include="Resources\back.ico" />
+    <None Include="Resources\arrow-alt-down.ico" />
+    <None Include="Resources\Add_item_icon.ico" />
+    <None Include="Resources\accept.ico" />
+    <None Include="Resources\32x32_Question.ico" />
+    <None Include="Resources\VerticalLine.gif" />
+    <None Include="Resources\BiGQuestionMark.png" />
+    <None Include="Resources\15.gif" />
+    <None Include="Resources\blank.png" />
+    <None Include="Resources\0.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OOP_NET\oops\Newtonsoft.Json\Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Previews\SkiViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
